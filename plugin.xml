@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.phonegap.plugins.barcodescanner"
-    version="0.7.0">
+    id="com.phonegap.plugins.wifiinfo"
+    version="0.7.1">
 
-    <name>BarcodeScanner</name>
+    <name>WifiInfo</name>
     
-    <description>Scans Barcodes.</description>
+    <description>Scans and return Wifi Access Points list</description>
 
     <engines>
         <engine name="cordova" version=">=2.8.0" />
@@ -15,32 +15,10 @@
     
     <license>MIT</license>
 
-    <!-- ios -->
-    <platform name="ios">
-        <!-- Cordova >= 2.8 -->
-        <config-file target="config.xml" parent="/*">
-            <feature name="BarcodeScanner">
-                <param name="ios-package" value="CDVBarcodeScanner" />
-            </feature>
-        </config-file>
-
-        <resource-file src="src/ios/scannerOverlay.xib" />
-
-        <header-file src="src/ios/zxing-all-in-one.h" />
-
-        <source-file src="src/ios/CDVBarcodeScanner.mm"  />
-        <source-file src="src/ios/zxing-all-in-one.cpp" />
-
-        <framework src="libiconv.dylib" />
-        <framework src="AVFoundation.framework" />
-        <framework src="AssetsLibrary.framework" />
-        <framework src="CoreVideo.framework" />
-    </platform>
-
     <!-- android -->
     <platform name="android">
 
-        <source-file src="src/android/com/phonegap/plugins/barcodescanner/BarcodeScanner.java" target-dir="src/com/phonegap/plugins/barcodescanner" />
+        <source-file src="src/android/com/phonegap/plugins/barcodescanner/BarcodeScanner.java" target-dir="src/com/phonegap/plugins/wifiinfo" />
         <!--
         <source-file src="R.java" target-dir="src/com/google/zxing/client/android" />
         -->
@@ -52,8 +30,8 @@
         -->
 
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="BarcodeScanner">
-                <param name="android-package" value="com.phonegap.plugins.barcodescanner.BarcodeScanner" />
+            <feature name="WifiInfo">
+                <param name="android-package" value="com.phonegap.plugins.barcodescanner.WifiInfo" />
             </feature>
         </config-file>
 
